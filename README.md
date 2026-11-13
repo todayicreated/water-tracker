@@ -8,8 +8,7 @@ The sketch targets an ESP32-WROOM-32D, a DFRobot 1.47-inch ST7789 SPI display (1
 
 | Component | Signals | ESP32 GPIOs in signal order |
 | --- | --- | --- |
-| ST7789 | SCLK / MOSI | 18 / 23 |
-| ST7789 | CS / DC / RST / backlight | 27 / 26 / 25 / 22 |
+| ST7789 Display | SCLK / MOSI / CS / DC / RST / backlight | 18 / 23 / 27 / 26 / 25 / 22 |
 | Rotary encoder | A / B / push | 33 / 32 / 19 |
 | Separate button | Push | 21 |
 | HX711 | Data / clock | 16 / 17 |
@@ -22,7 +21,9 @@ Use a common ground. The encoder switch and separate button connect to ground wh
 1. In Arduino IDE, install **esp32 by Espressif Systems** in Boards Manager. The release targets version **3.3.12**.
 2. Install **TFT_eSPI** by Bodmer (2.5.43), **Adafruit NeoPixel**, **WiFiManager** by tzapu and **ArduinoJson** version 7 using Library Manager. The HX711 driver is bundled.
 3. Open [WaterTracker.ino](WaterTracker/WaterTracker.ino). Keep the entire `WaterTracker` folder together. Its `build_opt.h` provides the display settings for the build.
-4. Select **Tools → Board → ESP32 Dev Module**, then **Tools → Partition Scheme → Huge APP (3MB No OTA/1MB SPIFFS)**. Select the board's USB port and click **Upload**. The default partition is too small for this sketch.
+4. Select **Tools → Board → ESP32 Dev Module**, then **Tools → Partition Scheme → Huge APP (3MB No OTA/1MB SPIFFS)**. The default partition is too small for this sketch.
+5. Select **Tools → Upload Speed → 115200**. Select the board's USB port and click **Upload**. 
+
 
 ## First-time setup
 
